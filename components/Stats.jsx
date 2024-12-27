@@ -11,7 +11,7 @@ const stats = [
 
 const Stats = () => {
   return (
-    <section>
+    <section className="pt-4 pb-12 xl:pt-0 xl:pb-0 py-12">
       <div className="container mx-auto justify-center items-center">
         <div className="flex flex-wrap gap-6 max-w-[80vw] mx-autp xl:max-w-none justify-between items-center">
           {stats.map((Item, index) => {
@@ -25,8 +25,8 @@ const Stats = () => {
                   duration={5}
                   delay={2}
                   className="text-4xl xl:text-6xl font-extrabold"
-                />{" "}
-                <p className="text-xl xl:text-2xl font-extrabold leading-snug text-white/80">
+                />
+                <p className={`${Item.text.length < 40 ? "max-w-[100px]" : "max-w-[150px]"} leading-snug text-white/80`}>
                   {Item.text}
                 </p>
               </div>

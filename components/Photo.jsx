@@ -3,15 +3,16 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import minhaFoto from "../public/assets/imageQuadrada2.png";
+import minhaFoto2 from "../public/assets/imageQuadradaRemoveBG.png"
 const Photo = () => {
   return (
     <div className="w-full h-full relative">
       <motion.div
-    //   initial={{ opacity: 0 }}
-    //   animate={{
-    //     opacity: 1,
-    //     transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
-    //   }}
+      //   initial={{ opacity: 0 }}
+      //   animate={{
+      //     opacity: 1,
+      //     transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
+      //   }}
       >
         <motion.div
           initial={{ opacity: 0 }}
@@ -22,7 +23,7 @@ const Photo = () => {
           className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] rounded-full mix-blend-lighten absolute"
         >
           <Image
-            src={minhaFoto}
+            src={minhaFoto2}
             priority
             quality={100}
             fill
@@ -48,8 +49,13 @@ const Photo = () => {
             animate={{
               strokeDasharray: ["15 120 25 25", " 16 25 92 72", "4 250 22 22"],
               rotate: [120, 360],
-                      }}
-                      transition={{ duration: 20, repeat: Infinity, ease: "linear", repeatType: "reverse" }}
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+              repeatType: "reverse",
+            }}
           />
         </motion.svg>
       </motion.div>
