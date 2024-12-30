@@ -13,7 +13,7 @@ import {
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 
 const about = {
-  title: "about me ",
+  title: "Sobre mim",
   description:
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repudiandae quaerat harum itaque a voluptatem temporibus corporis quo consectetur, ad id veritatis fuga enim officia sint sit quisquam vitae nisi.",
   info: [
@@ -22,12 +22,8 @@ const about = {
       fieldValue: "Deyvid Kasteh",
     },
     {
-      fieldName: "Phone",
-      fieldValue: "+55 21 98531-7520",
-    },
-    {
       fieldName: "Experiência",
-      fieldValue: "+2 anos de experiência",
+      fieldValue: "+3 anos de experiência em projetos",
     },
     {
       fieldName: "Whatsapp",
@@ -109,10 +105,7 @@ const skills = {
       icon: <FaGithub />,
       name: "GitHub",
     },
-    {
-      icon: <FaFigma />,
-      name: "Figma",
-    },
+
     {
       icon: <SiTailwindcss />,
       name: "Tailwind.css",
@@ -157,7 +150,7 @@ const Resume = () => {
             <TabsTrigger value="skills">Habilidades</TabsTrigger>
             <TabsTrigger value="about">Sobre mim</TabsTrigger>
           </TabsList>
-          <div className="min-h-[70vh] w-full">
+          <div className="min-h-[80vh] w-full overflow-hidden">
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-semibold">{experience.title}</h3>
@@ -195,11 +188,16 @@ const Resume = () => {
                   <p className="text-lg leading-snug max-w-[600px] text-white/60 mx-auto xl:mx-0">
                     {skills.description}
                   </p>
-                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]">
+                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
                     {skills.skillList.map((skill, index) => {
                       return (
-                        <li key={index} className="flex flex-col items-center gap-2 group">
-                          <div className="text-6xl group-hover:text-accent transition-all duration-500">{skill.icon}</div>
+                        <li
+                          key={index}
+                          className="flex flex-col items-center gap-2 group w-full h-[150px] bg-[#232329] py-6 px-10 rounded-xl justify-center gap-1]"
+                        >
+                          <div className="text-6xl group-hover:text-accent transition-all duration-500">
+                            {skill.icon}
+                          </div>
 
                           <p>{skill.name}</p>
                         </li>
@@ -209,8 +207,32 @@ const Resume = () => {
                 </div>
               </div>
             </TabsContent>
-            <TabsContent value="about" className="w-full">
-              sobre mim
+            <TabsContent
+              value="about"
+              className="w-full text-center xl:text-left"
+            >
+              <div>
+                <h3 className="text-4xl font-semibold">{about.title}</h3>
+                <p>{about.description}</p>
+                <ul>
+                  {about.info.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="
+                        text-white/80
+                        bg-[#232329]
+                        m-4
+                        p-4
+                        after:content-['']
+                        after:block after:h-1 after:bg-[#FFD700] after:w-0 hover:after:w-full after:transition-all after:duration-1000"
+                      >
+                        <spam className="text-lg font-semibold">{`${item.fieldName}: ${item.fieldValue}`}</spam>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </TabsContent>
           </div>
         </Tabs>
