@@ -21,8 +21,8 @@ module.exports = {
       colors: {
         primary: "#1c1c22",
         accent: {
-          DEFAULT: "#00FF99",
-          hover: "#00E187",
+          DEFAULT: "#FFE600",
+          hover: "#FFE600",
         },
         customGray: {
           50: "#f9f9f9",
