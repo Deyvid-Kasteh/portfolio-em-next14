@@ -4,14 +4,17 @@
   }
 }
 
-.dot {
+.dot, .dot2, .dot3{
   animation: 1s blink infinite;
 }
 
-.dot:nth-child(2) {
+.dot2 {
   animation-delay: 250ms;
 }
+/* .dot:nth-child(5) {
+  animation-delay: 250ms;
+} */
 
-.dot:nth-child(3) {
+.dot3 {
   animation-delay: 500ms;
 }
