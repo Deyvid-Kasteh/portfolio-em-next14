@@ -2,12 +2,16 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import Nav from "./Nav";
 import MobileNav from "./MobileNav";
+import Typing from "./ui/typing";
+
 const Header = () => {
   return (
     <header className="py-8 xl:py-12 text-white">
       <div className="container mx-auto flex items-center justify-between">
-        <Link href="/">
+        <Link href="/" className="flex items-center gap-2">
           <h1 className="text-3xl font-bold text-accent">KASTEH</h1>
+          <Typing/>
+
         </Link>
 
 
